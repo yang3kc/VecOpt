@@ -15,14 +15,14 @@ You can use the following command in a Python console or notebook:
 
 ```py
 import VecOpt
-VecOpt.download_data("googlenews")
+VecOpt.download_data("word_moral_appeals_googlenews")
 ```
 
-You can replace `googlenews` with other categories. Currently the following categories are supported:
+You can replace `word_moral_appeals_googlenews` with other categories. Currently the following categories are supported:
 
 | Category name | Note |
 |---------------|------|
-| googlenews    | Based on pretrained embedding by Google. The embedding contains 300-dimensional vectors for 3 million words and phrases. See https://code.google.com/archive/p/word2vec/ for details. |
+| word_moral_appeals_googlenews    | Based on pretrained embedding by Google. The embedding contains 300-dimensional vectors for 3 million words and phrases. See https://code.google.com/archive/p/word2vec/ for details. |
 
 ## Calculate moral intuitions
 

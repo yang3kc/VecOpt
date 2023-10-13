@@ -34,9 +34,9 @@ local_dataset_directory = os.path.join(package_directory, "data")
 ################################################################################
 class VecOpt:
     MF_FILES = {
-        "googlenews": {
-            "note": """Based on pretrained embedding by Google.
-                Contains 300-dimensional vectors for 3 million words and phrases.
+        "word_moral_appeals_googlenews": {
+            "note": """Moral appeals based on pretrained embedding by Google.
+                Contains 300-dimensional vectors for 3 million words and phrases based on Google News dataset.
                 See https://code.google.com/archive/p/word2vec/ for details.
                 """,
             "url": "https://raw.githubusercontent.com/yangkcatiu/VecOpt/main/VecOpt/data/word_moral_googlenews.csv.gz",
@@ -45,10 +45,10 @@ class VecOpt:
     }
     MF_categories = ["care", "authority", "fairness", "loyalty", "sanctity"]
 
-    def __init__(self, moral_fundation_version="googlenews"):
+    def __init__(self, moral_fundation_version="word_moral_appeals_googlenews"):
         if moral_fundation_version not in self.MF_FILES:
             logger.error(
-                f"""Moral fundation data for {moral_fundation_version} does not exist.
+                f"""Moral appeal data from {moral_fundation_version} does not exist.
                     Choose one from {list(self.MF_FILES.keys())}"""
             )
             return
@@ -60,9 +60,9 @@ class VecOpt:
                 f"""Moral fundation data for {moral_fundation_version} not found!
                 Please download it using the following python function:
 
-                VecOpt.download_data("googlenews")
+                VecOpt.download_data("word_moral_appeals_googlenews")
 
-                'googlenews' can be replaced with other categories in {list(self.MF_FILES.keys())}
+                'word_moral_appeals_googlenews' can be replaced with other categories in {list(self.MF_FILES.keys())}
                 """
             )
             return
