@@ -30,9 +30,9 @@ local_dataset_directory = os.path.join(package_directory, "data")
 
 ################################################################################
 ################################################################################
-# VecOpt class
+# vMFD class
 ################################################################################
-class VecOpt:
+class vMFD:
     MF_FILES = {
         "word_moral_appeals_googlenews": {
             "note": """Moral appeals based on pretrained embedding by Google.
@@ -60,7 +60,7 @@ class VecOpt:
                 f"""Moral fundation data for {moral_fundation_version} not found!
                 Please download it using the following python function:
 
-                VecOpt.download_data("word_moral_appeals_googlenews")
+                vMFD.download_data("word_moral_appeals_googlenews")
 
                 'word_moral_appeals_googlenews' can be replaced with other categories in {list(self.MF_FILES.keys())}
                 """
@@ -177,17 +177,17 @@ def _download_url(url, folder, log=True, file_name=None):
 
 
 def download_data(moral_fundation_version=""):
-    if moral_fundation_version not in VecOpt.MF_FILES:
+    if moral_fundation_version not in vMFD.MF_FILES:
         logger.error(
             f"""Moral fundation data for {moral_fundation_version} does not exist.
-                Choose one from {list(VecOpt.MF_FILES.keys())}"""
+                Choose one from {list(vMFD.MF_FILES.keys())}"""
         )
         return
 
     _download_url(
-        VecOpt.MF_FILES[moral_fundation_version]["url"],
+        vMFD.MF_FILES[moral_fundation_version]["url"],
         local_dataset_directory,
-        file_name=VecOpt.MF_FILES[moral_fundation_version]["filename"],
+        file_name=vMFD.MF_FILES[moral_fundation_version]["filename"],
     )
 
     logger.info("Data downloaded!")

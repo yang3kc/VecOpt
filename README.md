@@ -14,8 +14,8 @@ The pacakge relies on a pre-calculated data frame that needs to be downloaded.
 You can use the following command in a Python console or notebook:
 
 ```py
-import VecOpt
-VecOpt.download_data("word_moral_appeals_googlenews")
+import vMFD
+vMFD.download_data("word_moral_appeals_googlenews")
 ```
 
 You can replace `word_moral_appeals_googlenews` with other categories. Currently the following categories are supported:
@@ -29,9 +29,9 @@ You can replace `word_moral_appeals_googlenews` with other categories. Currently
 Once the data is downloaded, you can calculate the moral intuitions of any text.
 
 ```py
-import VecOpt
+import vMFD
 
-vo = VecOpt.VecOpt()
+vo = vMFD.vMFD()
 
 # Only calculate the valence
 vo.calculate_valence("Trump is the best president")
