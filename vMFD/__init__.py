@@ -57,12 +57,14 @@ class vMFD:
         )
         if not os.path.isfile(mf_path):
             logger.error(
-                f"""Moral fundation data for {moral_fundation_version} not found!
+                f"""Moral appeal data for {moral_fundation_version} not found!
                 Please download it using the following python function:
 
                 vMFD.download_data("word_moral_appeals_googlenews")
 
                 'word_moral_appeals_googlenews' can be replaced with other categories in {list(self.MF_FILES.keys())}
+
+                Remember to create a new instance of the vMFD class after you successfully download the moral appeal data.
                 """
             )
             return
@@ -179,7 +181,7 @@ def _download_url(url, folder, log=True, file_name=None):
 def download_data(moral_fundation_version=""):
     if moral_fundation_version not in vMFD.MF_FILES:
         logger.error(
-            f"""Moral fundation data for {moral_fundation_version} does not exist.
+            f"""Moral appeal data for {moral_fundation_version} does not exist.
                 Choose one from {list(vMFD.MF_FILES.keys())}"""
         )
         return
