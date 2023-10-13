@@ -106,7 +106,7 @@ class VecOpt:
         dat = doc_mf_df[self.MF_categories]
         return dict(dat.abs().mean())
 
-    def calculate_polarity(self, doc):
+    def calculate_ambivalence(self, doc):
         doc_mf_df = self._get_doc_mf_df(doc)
         dat = doc_mf_df[self.MF_categories]
         return dict(dat.var(ddof=0))
